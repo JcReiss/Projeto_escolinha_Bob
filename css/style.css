@@ -28,45 +28,67 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    padding-top: 56px; /* Ajuste para navbar fixa */
+    padding-top: 40px; /* Ajuste para navbar fixa */
     color: var(--cor-texto-escuro);
     background-color: var(--cor-fundo-claro);
 }
 
 /* --- Navbar Customização --- */
 .navbar {
-    background-color: var(--cor-fundo-escuro) !important; /* Usa o fundo escuro da logo */
+    padding-top: 0.1rem;    /* Valor padrão é geralmente 0.5rem ou mais, reduza aqui */
+    padding-bottom: 0.1rem; /* Reduza aqui também */
+    background-color: var(--cor-fundo-escuro) !important; /* Mantém a cor de fundo */
+    /* transition: padding 0.2s ease-in-out; (Opcional: suaviza a mudança de tamanho se houver) */
 }
 
-.navbar-brand {
-    font-weight: bold;
-    color: var(--cor-acento1) !important; /* Dourado da logo para a marca */
-}
-.navbar-brand:hover {
-    color: var(--cor-texto-claro) !important;
-}
-
+/* Reduz o padding vertical dos links de navegação */
 .navbar .nav-link {
-    color: rgba(255, 255, 255, 0.8); /* Texto claro semi-transparente */
+    padding-top: 0.1rem;    /* Reduza um pouco o padding dos links */
+    padding-bottom: 0.2rem;
+    /* Mantenha as outras estilizações dos links */
+    color: rgba(255, 255, 255, 0.8);
     margin-left: 10px;
     margin-right: 10px;
     text-transform: uppercase;
     font-size: 0.9rem;
     transition: color 0.3s ease;
 }
-
 .navbar .nav-link:hover,
 .navbar .nav-link.active {
     color: var(--cor-acento1) !important; /* Dourado no hover/ativo */
 }
 
-/* Icone do Toggler (Hamburguer) */
-.navbar-toggler {
-    border-color: rgba(255, 255, 255, 0.3);
+
+/* Ajusta o padding da marca e o tamanho da logo */
+.navbar-brand {
+    padding-top: 0.3rem;    /* Reduz o padding vertical da marca/logo */
+    padding-bottom: 0.3rem;
+    margin-right: 5rem;     /* Espaço à direita da marca */
+    /* Mantenha as outras estilizações da marca */
+    font-weight: bold;
+    color: var(--cor-acento1) !important;
 }
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+
+.navbar-brand img {
+    height: 50px; /* <<< Experimente diminuir a altura da logo aqui (ex: de 35px para 30px) */
+    width: auto;  /* Mantém a proporção */
+    /* As classes d-inline-block e align-text-top/me-2 do HTML cuidam do alinhamento */
 }
+
+/* IMPORTANTE: Ajuste o padding do body se a navbar for fixa no topo */
+body {
+    /* Se a altura da navbar diminuiu, reduza este padding também */
+    /* O valor exato depende da nova altura da navbar. Use o Inspecionar Elemento */
+    /* do navegador para medir ou experimente valores como 50px, 48px, etc. */
+    padding-top: 50px; /* <<< TENTE UM VALOR MENOR QUE O ANTERIOR (era 56px) */
+
+    /* Mantenha as outras estilizações do body */
+    font-family: 'Poppins', sans-serif;
+    color: var(--cor-texto-escuro);
+    background-color: var(--cor-fundo-claro);
+}
+
+/* Mantenha as outras regras CSS (Toggler, Carousel, etc.) */
 
 
 /* --- Carousel Customização --- */
