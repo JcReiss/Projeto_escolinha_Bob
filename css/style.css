@@ -1,0 +1,292 @@
+/* Importar fontes (Exemplo com Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* ==========================================
+   Paleta de Cores Baseada na Logo
+   ==========================================
+   - Fundo Escuro: Cinza-azulado da logo (#2B2E33)
+   - Primária: Laranja/Vermelho vibrante da crina (#E34C3C / pode ajustar)
+   - Secundária: Azul/Ciano da crina (#5BADDD / pode ajustar)
+   - Acento 1: Dourado/Amarelo da face/crina (#FDBA4C / pode ajustar)
+   - Acento 2: Roxo/Rosa da crina (#A55A9A / pode ajustar)
+   - Texto Claro: Branco ou cinza muito claro (#FFFFFF / #F8F9FA)
+   - Texto Escuro: Cinza escuro ou o fundo da logo (#343A40 / #2B2E33)
+   - Fundo Claro Alternativo: Um cinza bem suave (#F1F3F5)
+*/
+:root {
+    --cor-fundo-escuro: #2B2E33;
+    --cor-primaria: #E34C3C;      /* Laranja/Vermelho Vibrante */
+    --cor-secundaria: #5BADDD;   /* Azul/Ciano */
+    --cor-acento1: #FDBA4C;       /* Dourado/Amarelo */
+    --cor-acento2: #A55A9A;       /* Roxo/Rosa */
+
+    --cor-texto-claro: #FFFFFF;
+    --cor-texto-escuro: #343A40;
+    --cor-fundo-claro: #FFFFFF;
+    --cor-fundo-alternativo: #F1F3F5; /* Cinza bem suave para seções */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    padding-top: 56px; /* Ajuste para navbar fixa */
+    color: var(--cor-texto-escuro);
+    background-color: var(--cor-fundo-claro);
+}
+
+/* --- Navbar Customização --- */
+.navbar {
+    background-color: var(--cor-fundo-escuro) !important; /* Usa o fundo escuro da logo */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--cor-acento1) !important; /* Dourado da logo para a marca */
+}
+.navbar-brand:hover {
+    color: var(--cor-texto-claro) !important;
+}
+
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.8); /* Texto claro semi-transparente */
+    margin-left: 10px;
+    margin-right: 10px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--cor-acento1) !important; /* Dourado no hover/ativo */
+}
+
+/* Icone do Toggler (Hamburguer) */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+/* --- Carousel Customização --- */
+.c-item {
+    height: 75vh; /* Ajuste a altura conforme necessário */
+    min-height: 350px;
+    background-color: var(--cor-fundo-escuro); /* Fundo escuro enquanto carrega */
+}
+
+.c-img {
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5); /* Escurece um pouco mais para destacar texto */
+}
+
+.carousel-caption {
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-caption h1 {
+    font-size: calc(1.8rem + 2.5vw);
+    font-weight: 700 !important;
+    color: var(--cor-texto-claro);
+}
+
+.carousel-caption p {
+     font-size: calc(1rem + 0.5vw);
+     color: rgba(255, 255, 255, 0.9);
+}
+
+/* Botão dentro do Carousel */
+.carousel-caption .btn-primary {
+    background-color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    font-weight: bold;
+    padding: 0.8rem 1.8rem; /* Botão maior */
+    font-size: calc(0.9rem + 0.2vw);
+}
+.carousel-caption .btn-primary:hover {
+    background-color: #c0392b; /* Um vermelho/laranja um pouco mais escuro no hover */
+    border-color: #c0392b;
+}
+
+/* Indicadores e Controles do Carousel */
+.carousel-indicators [data-bs-target] {
+    background-color: var(--cor-acento1); /* Dourado para indicadores */
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.3); /* Fundo semi-transparente para melhor visibilidade */
+    border-radius: 50%;
+    padding: 15px;
+    background-size: 60%; /* Ajusta tamanho do ícone interno */
+}
+
+
+/* --- Seções Customização --- */
+#sobre {
+     background-color: var(--cor-fundo-claro); /* Fundo branco */
+}
+
+#atividades, #contato {
+    background-color: var(--cor-fundo-alternativo); /* Fundo cinza suave */
+}
+
+#apoie {
+    background-color: var(--cor-fundo-claro);
+}
+
+h2 {
+    color: var(--cor-primaria); /* Títulos com a cor primária (Laranja/Vermelho) */
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-align: center; /* Centraliza títulos de seção */
+}
+/* Ajuste para seção sobre se não quiser centralizado */
+#sobre h2 {
+    text-align: left;
+}
+
+
+.card {
+    border: none; /* Remove borda padrão */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px; /* Bordas levemente arredondadas */
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(43, 46, 51, 0.15) !important; /* Sombra mais evidente no fundo escuro */
+}
+.card-title {
+    color: var(--cor-primaria); /* Título do card com cor primária */
+    font-weight: bold;
+}
+
+
+/* --- Botões Customização --- */
+
+/* Botão Primário (Baseado no Laranja/Vermelho) */
+.btn-primary {
+    background-color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    font-weight: bold;
+    padding: 0.6rem 1.2rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.btn-primary:hover {
+    background-color: #c0392b; /* Tom mais escuro */
+    border-color: #c0392b;
+     color: var(--cor-texto-claro);
+}
+
+/* Botão Secundário (Baseado no Azul) */
+.btn-secondary { /* Se usar, ou pode mapear btn-success/warning */
+    background-color: var(--cor-secundaria);
+    border-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+    font-weight: bold;
+    padding: 0.6rem 1.2rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.btn-secondary:hover {
+    background-color: #4a9ccf; /* Tom mais escuro */
+    border-color: #4a9ccf;
+    color: var(--cor-texto-claro);
+}
+
+/* Mapeando botões existentes na seção "Apoie" */
+#apoie .btn-success { /* Botão "Quero Doar Material" -> Usando cor Secundária (Azul) */
+     background-color: var(--cor-secundaria);
+    border-color: var(--cor-secundaria);
+}
+#apoie .btn-success:hover {
+     background-color: #4a9ccf;
+     border-color: #4a9ccf;
+}
+
+#apoie .btn-warning { /* Botão "Quero ser Voluntário" -> Usando cor Acento1 (Dourado) */
+     background-color: var(--cor-acento1);
+     border-color: var(--cor-acento1);
+     color: var(--cor-texto-escuro); /* Texto escuro para contraste com dourado */
+}
+#apoie .btn-warning:hover {
+     background-color: #e0a845; /* Tom mais escuro */
+     border-color: #e0a845;
+     color: var(--cor-texto-escuro);
+}
+
+/* Botão Outline (Contorno) */
+.btn-outline-primary {
+    color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+    font-weight: bold;
+    padding: 0.6rem 1.2rem;
+}
+.btn-outline-primary:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+}
+
+/* --- Formulário de Contato --- */
+#contato .form-control:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 0.25rem rgba(227, 76, 60, 0.25); /* Sombra com cor primária */
+}
+
+
+/* --- Footer Customização --- */
+footer {
+    background-color: var(--cor-fundo-escuro);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+footer p {
+     margin-bottom: 0.5rem; /* Menor margem no footer */
+}
+
+footer a {
+    color: var(--cor-secundaria); /* Links do footer em azul */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--cor-acento1); /* Hover para dourado */
+}
+
+/* --- Responsividade Adicional --- */
+@media (max-width: 767.98px) {
+    .carousel-caption {
+        top: 45%; /* Ajusta um pouco */
+    }
+    .carousel-caption h1 {
+        font-size: 1.8rem;
+    }
+     .carousel-caption p {
+        font-size: 0.8rem;
+    }
+     .carousel-caption .btn {
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+        margin-top: 0.8rem !important;
+    }
+    body {
+         padding-top: 51px;
+    }
+     .c-item {
+        height: 55vh; /* Altura ajustada para mobile */
+     }
+     h2 {
+         font-size: 1.8rem; /* Títulos um pouco menores */
+     }
+     /* Centraliza texto do footer no mobile */
+     footer .text-md-start, footer .text-md-end {
+         text-align: center !important;
+     }
+}
